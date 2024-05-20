@@ -1,0 +1,30 @@
+{
+  "name": "hoverlink-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.0.4",
+    "@types/dagre": "^0.7.52",
+    "dagre": "^0.8.5",
+    "next": "14.1.0",
+    "puppeteer": "^22.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "reactflow": "^11.10.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "sass": "^1.70.0",
+    "typescript": "^5"
+  }
+}
