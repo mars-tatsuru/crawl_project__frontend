@@ -1,0 +1,157 @@
+{
+  "top": {
+    "ja": {
+      "url": "https://www.marsflag.com/ja/",
+      "title": "株式会社マーズフラッグ",
+      "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja.png",
+      "level": 1,
+      "privacy-policy.html": {
+        "url": "https://www.marsflag.com/ja/privacy-policy.html",
+        "title": "プライバシーポリシー - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-privacy-policy.html.png",
+        "level": 2
+      },
+      "faq": {
+        "url": "https://www.marsflag.com/ja/faq/",
+        "title": "サポート・よくあるご質問 - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-faq.png",
+        "level": 2
+      },
+      "news": {
+        "2024": {
+          "title": "2024",
+          "url": "top/ja/news/2024",
+          "level": 3,
+          "20240517-kaishi.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240517-kaishi.html",
+            "title": "開志専門職大学「クラウド技術概論」に登壇しました - MARS FLAG",
+            "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-news-2024-20240517-kaishi.html.png",
+            "level": 4
+          }
+        },
+        "url": "https://www.marsflag.com/ja/news/",
+        "title": "ニュース・お知らせ - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-news.png",
+        "level": 2
+      },
+      "services": {
+        "url": "https://www.marsflag.com/ja/services/",
+        "title": "製品・サービス - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services.png",
+        "level": 2,
+        "marsfinder": {
+          "url": "https://www.marsflag.com/ja/services/marsfinder/",
+          "title": "サイト内検索 MARS FINDER - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsfinder.png",
+          "level": 3
+        },
+        "marsscreen": {
+          "url": "https://www.marsflag.com/ja/services/marsscreen/",
+          "title": "製品検索プラットフォーム MARS SCREEN - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsscreen.png",
+          "level": 3
+        },
+        "marsemotech": {
+          "url": "https://www.marsflag.com/ja/services/marsemotech/",
+          "title": "チャット型AI対話サービス MARS EmoTech - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsemotech.png",
+          "level": 3
+        },
+        "marsquality": {
+          "url": "https://www.marsflag.com/ja/services/marsquality/",
+          "title": "Webサイト品質管理 MARS QUALITY - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsquality.png",
+          "level": 3
+        },
+        "marsplatform": {
+          "url": "https://www.marsflag.com/ja/services/marsplatform/",
+          "title": "API連携クラウドサービス MARS Platform - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsplatform.png",
+          "level": 3
+        },
+        "marsexplorer": {
+          "url": "https://www.marsflag.com/ja/services/marsexplorer/",
+          "title": "検索窓おすすめ表示 MARS EXPLORER - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-services-marsexplorer.png",
+          "level": 3
+        }
+      },
+      "about-us": {
+        "url": "https://www.marsflag.com/ja/about-us/",
+        "title": "会社情報 - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-about-us.png",
+        "level": 2,
+        "careers": {
+          "url": "https://www.marsflag.com/ja/about-us/careers/",
+          "title": "採用情報 - MARS FLAG",
+          "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-about-us-careers.png",
+          "level": 3
+        }
+      },
+      "solutions": {
+        "url": "https://www.marsflag.com/ja/solutions/",
+        "title": "MARS FLAGが解決する課題 - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-solutions.png",
+        "level": 2
+      },
+      "contact-us": {
+        "url": "https://www.marsflag.com/ja/contact-us/",
+        "title": "お問い合わせ - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-contact-us.png",
+        "level": 2
+      },
+      "case-studies": {
+        "url": "https://www.marsflag.com/ja/case-studies/",
+        "title": "導入事例 - MARS FLAG",
+        "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-case-studies.png",
+        "level": 2,
+        "marsfinder": {
+          "title": "marsfinder",
+          "url": "top/ja/case-studies/marsfinder",
+          "level": 3,
+          "hitachi.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsfinder/hitachi.html",
+            "title": "株式会社 日立製作所様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-case-studies-marsfinder-hitachi.html.png",
+            "level": 4
+          },
+          "jvckenwood.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsfinder/jvckenwood.html",
+            "title": "株式会社JVCケンウッド様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-case-studies-marsfinder-jvckenwood.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "title": "marsscreen",
+          "url": "top/ja/case-studies/marsscreen",
+          "level": 3,
+          "panasonic.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsscreen/panasonic.html",
+            "title": "パナソニック株式会社様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/ja-case-studies-marsscreen-panasonic.html.png",
+            "level": 4
+          }
+        }
+      }
+    },
+    "en": {
+      "url": "https://www.marsflag.com/en/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/en.png",
+      "level": 1
+    },
+    "tw": {
+      "url": "https://www.marsflag.com/tw/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/tw.png",
+      "level": 1
+    },
+    "cn": {
+      "url": "https://www.marsflag.com/cn/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "https://test-koike.s3.ap-northeast-1.amazonaws.com/site-info/snapshoot/cn.png",
+      "level": 1
+    }
+  }
+}

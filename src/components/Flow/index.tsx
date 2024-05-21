@@ -31,9 +31,10 @@ import ReactFlow, {
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
-import CustomNode from "@/components/CustomNode";
-import CustomEdge from "@/components/CustomEdge";
+import CustomNode from "@/components/Flow/CustomNode";
+import CustomEdge from "@/components/Flow/CustomEdge";
 import styles from "@/styles/Flow.module.scss";
+import tree from "../../../site_tree.json";
 
 /************************************************
  * 1. use Darge to layout the nodes and edges
@@ -53,10 +54,6 @@ type TreeNode = {
   y?: number;
   [key: string]: any; // To include children nodes
 };
-
-interface LayoutFlowProps {
-  siteTree: { [key: string]: TreeNode };
-}
 
 const nodeTypes = {
   custom: CustomNode,
@@ -106,7 +103,7 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
   return { nodes, edges };
 };
 
-const LayoutFlow: React.FC<LayoutFlowProps> = ({ siteTree }) => {
+const LayoutFlow = (siteTree: any) => {
   // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 
@@ -125,6 +122,25 @@ const LayoutFlow: React.FC<LayoutFlowProps> = ({ siteTree }) => {
     [nodes, edges]
   );
 
+  //TODO: 他にも引数にnodeの名前を入れて、検索してzoomする関数を作る
+  // const moveToFirstNode = useCallback(() => {
+  //   const firstNode = nodes[0];
+  //   const windowWidth = window.innerWidth;
+  //   const windowHeight = window.innerHeight;
+  //   const clientRect = firstNode?.position;
+
+  //   if (clientRect) {
+  //     setViewport(
+  //       {
+  //         x: -clientRect.x / 2 + windowWidth / 2,
+  //         y: clientRect.y,
+  //         zoom: 0.5,
+  //       },
+  //       { duration: 1000 }
+  //     );
+  //   }
+  // }, [nodes]);
+
   /************************************************
    * 1 useEffect
    ************************************************/
@@ -138,7 +154,7 @@ const LayoutFlow: React.FC<LayoutFlowProps> = ({ siteTree }) => {
 
     setNodes([...layoutedNodes]);
     setEdges([...layoutedEdges]);
-  }, [siteTree]);
+  }, []);
 
   /************************************************
    * Add edge or connection
@@ -223,8 +239,6 @@ const LayoutFlow: React.FC<LayoutFlowProps> = ({ siteTree }) => {
       processEntry(key, value, parentId);
     });
 
-    console.log("nodes", nodes);
-    console.log("edges", edges);
     return { nodes, edges };
   };
 
@@ -282,25 +296,35 @@ const LayoutFlow: React.FC<LayoutFlowProps> = ({ siteTree }) => {
         minZoom: 1,
         maxZoom: 0.4,
       }}
+      // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#333" }} />
+      {/* <MiniMap nodeStrokeWidth={3} /> */}
       <Panel position="top-right">
+        {/* <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
+          vertical layout
+        </button> */}
+        {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
+        {/* <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
+          move to top level
+        </button> */}
         <p>
           Current: positionX:{x}, positionY:{y}, zoom:{zoom}
         </p>
       </Panel>
+      {/* <Controls /> */}
     </ReactFlow>
   );
 };
 
-const Flow: React.FC<{ siteTree: { [key: string]: TreeNode } }> = ({
-  siteTree,
-}) => (
-  <div className={styles.flow}>
-    <ReactFlowProvider>
-      <LayoutFlow siteTree={siteTree} />
-    </ReactFlowProvider>
-  </div>
-);
+function Flow(siteTree: any) {
+  return (
+    <div className={styles.flow}>
+      <ReactFlowProvider>
+        <LayoutFlow siteTree={siteTree} />
+      </ReactFlowProvider>
+    </div>
+  );
+}
 
 export default Flow;
