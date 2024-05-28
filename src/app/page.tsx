@@ -16,16 +16,23 @@ const Home: NextPage = () => {
     setIsCrawling(true);
     try {
       const response = await fetch(
-        `http://localhost:8000/crawl?siteUrl=${siteUrl}`,
+        // `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
+        `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
         {
           method: "GET",
         }
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       setSiteTree(data);
       setIsCrawling(false);
     } catch (error) {
       console.log(error);
+      setIsCrawling(false);
     }
   };
 
