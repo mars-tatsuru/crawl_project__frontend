@@ -74,7 +74,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       {!siteTree && !isCrawling && (
         <div className={styles.form}>
-          <h2>input crawl url{process.env.NEXT_PUBLIC_REGION}</h2>
+          <h2>input crawl url</h2>
           <input
             type="text"
             placeholder="https://~~~~~~~"
