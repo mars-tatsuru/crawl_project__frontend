@@ -2,10 +2,15 @@
 import type { NextPage } from "next";
 import Flow from "@/components/Flow/index";
 import styles from "@/styles/Home.module.scss";
-// import siteTree from "../../site_tree.json";
 import Image from "next/image";
 import "reactflow/dist/style.css";
 import { useState, useEffect } from "react";
+import {
+  PutObjectCommand,
+  S3Client,
+  GetObjectCommand,
+  CreateMultipartUploadCommand,
+} from "@aws-sdk/client-s3";
 
 const Home: NextPage = () => {
   const [siteTree, setSiteTree] = useState();
@@ -16,8 +21,8 @@ const Home: NextPage = () => {
     setIsCrawling(true);
     try {
       const response = await fetch(
-        // `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
-        `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
+        `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
+        // `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
         {
           method: "GET",
         }
@@ -27,8 +32,31 @@ const Home: NextPage = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
+      // Get the response from the crawling server
       const data = await response.json();
-      setSiteTree(data);
+      const domainName = data.message;
+
+      // Create an S3 client
+      const client = new S3Client({
+        region: process.env.NEXT_PUBLIC_REGION,
+        credentials: {
+          accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID as string,
+          secretAccessKey: process.env
+            .NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY as string,
+        },
+      });
+
+      // Get the site tree from the S3 bucket
+      const command = new GetObjectCommand({
+        Bucket: `${process.env.NEXT_PUBLIC_BUCKETNAME}`,
+        Key: `${process.env.NEXT_PUBLIC_FILEPATH}/tree/${domainName}.json`,
+      });
+      const jsonData = await client.send(command).then((data) => {
+        return data.Body?.transformToString();
+      });
+
+      //TODO: Set the site tree
+      // setSiteTree(jsonData);
       setIsCrawling(false);
     } catch (error) {
       console.log(error);

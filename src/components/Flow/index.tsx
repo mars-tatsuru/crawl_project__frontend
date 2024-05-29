@@ -34,7 +34,6 @@ import Dagre from "@dagrejs/dagre";
 import CustomNode from "@/components/Flow/CustomNode";
 import CustomEdge from "@/components/Flow/CustomEdge";
 import styles from "@/styles/Flow.module.scss";
-import tree from "../../../site_tree.json";
 
 /************************************************
  * 1. use Darge to layout the nodes and edges
@@ -121,25 +120,6 @@ const LayoutFlow = (siteTree: any) => {
     },
     [nodes, edges]
   );
-
-  //TODO: 他にも引数にnodeの名前を入れて、検索してzoomする関数を作る
-  // const moveToFirstNode = useCallback(() => {
-  //   const firstNode = nodes[0];
-  //   const windowWidth = window.innerWidth;
-  //   const windowHeight = window.innerHeight;
-  //   const clientRect = firstNode?.position;
-
-  //   if (clientRect) {
-  //     setViewport(
-  //       {
-  //         x: -clientRect.x / 2 + windowWidth / 2,
-  //         y: clientRect.y,
-  //         zoom: 0.5,
-  //       },
-  //       { duration: 1000 }
-  //     );
-  //   }
-  // }, [nodes]);
 
   /************************************************
    * 1 useEffect
