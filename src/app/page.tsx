@@ -21,8 +21,8 @@ const Home: NextPage = () => {
     setIsCrawling(true);
     try {
       const response = await fetch(
-        `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
-        // `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
+        // `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
+        `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
         {
           method: "GET",
         }
@@ -51,12 +51,17 @@ const Home: NextPage = () => {
         Bucket: `${process.env.NEXT_PUBLIC_BUCKETNAME}`,
         Key: `${process.env.NEXT_PUBLIC_FILEPATH}/tree/${domainName}.json`,
       });
-      const jsonData = await client.send(command).then((data) => {
-        return data.Body?.transformToString();
-      });
+      const jsonData = await client
+        .send(command)
+        .then((data) => {
+          return data.Body?.transformToString();
+        })
+        .catch((error) => {
+          console.log(error);
+          return;
+        });
 
-      //TODO: Set the site tree
-      // setSiteTree(jsonData);
+      setSiteTree(JSON.parse(jsonData!));
       setIsCrawling(false);
     } catch (error) {
       console.log(error);
