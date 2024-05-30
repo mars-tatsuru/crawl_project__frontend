@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useCallback,
-  useMemo,
-  useEffect,
-  useState,
-  useLayoutEffect,
-} from "react";
+import { useCallback, useEffect, useLayoutEffect } from "react";
 
 import ReactFlow, {
   ReactFlowProvider,
@@ -15,19 +9,12 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  Connection,
   Edge,
   ConnectionLineType,
-  Position,
   Background,
-  Controls,
-  BackgroundVariant,
-  MiniMap,
-  ControlButton,
   useReactFlow,
   useNodesInitialized,
   useViewport,
-  Viewport,
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
@@ -276,23 +263,13 @@ const LayoutFlow = (siteTree: any) => {
         minZoom: 1,
         maxZoom: 0.4,
       }}
-      // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#333" }} />
-      {/* <MiniMap nodeStrokeWidth={3} /> */}
       <Panel position="top-right">
-        {/* <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
-          vertical layout
-        </button> */}
-        {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
-        {/* <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
-          move to top level
-        </button> */}
         <p>
           Current: positionX:{x}, positionY:{y}, zoom:{zoom}
         </p>
       </Panel>
-      {/* <Controls /> */}
     </ReactFlow>
   );
 };
