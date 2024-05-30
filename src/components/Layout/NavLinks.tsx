@@ -13,7 +13,7 @@ const links = [
   { name: "Home", href: "/home", icon: HomeIcon },
   {
     name: "Crawl",
-    href: "/home/crawl",
+    href: "/crawl",
     icon: DocumentDuplicateIcon,
   },
 ];
