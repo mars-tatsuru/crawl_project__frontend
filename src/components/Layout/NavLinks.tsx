@@ -20,6 +20,7 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <>
@@ -29,11 +30,11 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
-            className={clsx("h-11 flex items-center", {
-              "text-blue-600": pathname === link.href,
+            className={clsx("flex h-11 items-center", {
+              "text-blue-600": pathname.includes(link.href),
             })}
           >
-            <LinkIcon className="w-6 mr-1" />
+            <LinkIcon className="mr-1 w-6" />
             <p className="hidden md:block">{link.name}</p>
           </Link>
         );

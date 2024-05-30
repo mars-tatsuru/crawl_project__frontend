@@ -18,8 +18,8 @@ import ReactFlow, {
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
-import CustomNode from "@/components/Flow/CustomNode";
-import CustomEdge from "@/components/Flow/CustomEdge";
+import CustomNode from "@/components/ReactFlow/CustomNode";
+import CustomEdge from "@/components/ReactFlow/CustomEdge";
 import styles from "@/styles/Flow.module.scss";
 
 /************************************************
