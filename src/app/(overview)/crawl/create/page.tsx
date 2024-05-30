@@ -77,16 +77,15 @@ const Crawl: NextPage = () => {
             type="text"
             placeholder="https://~~~~~~~"
             onChange={(e) => setSiteUrl(e.target.value)}
-            className="mb-4 h-10 w-full rounded-md p-2"
+            className="mb-4 h-10 w-full rounded-md border border-gray-500 bg-transparent p-2 text-white focus:border-blue-500 focus:outline-none"
           />
           <button
             onClick={runCrawl}
             className={clsx(
-              "h-10 rounded-sm bg-blue-500 font-bold text-white opacity-50",
+              "h-10 rounded-sm bg-blue-500 font-bold text-white",
               {
-                "cursor-pointer": siteUrl,
-                "opacity-100": siteUrl,
-                "hover:bg-blue-700": siteUrl,
+                "cursor-not-allowed opacity-50": !siteUrl,
+                "cursor-pointer opacity-100 hover:bg-blue-700": siteUrl,
               },
             )}
             disabled={!siteUrl}
