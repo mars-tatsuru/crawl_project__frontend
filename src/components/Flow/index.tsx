@@ -29,8 +29,8 @@ const dagreGraph = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
 
-const nodeWidth = 172;
-const nodeHeight = 300;
+const nodeWidth = 200;
+const nodeHeight = 350;
 
 type TreeNode = {
   url?: string;
@@ -276,7 +276,7 @@ const LayoutFlow = (siteTree: any) => {
 
 function Flow(siteTree: any) {
   return (
-    <div className={styles.flow}>
+    <div className="flex grow text-sm w-full h-full">
       <ReactFlowProvider>
         <LayoutFlow siteTree={siteTree} />
       </ReactFlowProvider>

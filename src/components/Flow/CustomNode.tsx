@@ -10,11 +10,11 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
       {/* <NodeResizer /> */}
       <Handle type="source" position={Position.Bottom} id="bottom" />
       <Handle type="target" position={Position.Top} id="top" />
-      <div className={styles.card}>
+      <div className="w-48 flex-col bg-gray-100 py-2.5 px-5 break-words whitespace-pre-wrap rounded-md">
         {data?.thumbnailPath && (
-          <div className={styles.imageContainer}>
+          <div className="relative h-24 mb-2.5">
             <Image
-              className={styles.image}
+              className="w-full h-full"
               src={data?.thumbnailPath}
               fill={true}
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -24,10 +24,10 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
             />
           </div>
         )}
-        <div className={styles.title}>{data?.title}</div>
-        <div className={styles.content}>Level: {data?.level}</div>
+        <div className="text-sm mb-1 text-gray-800">{data?.title}</div>
+        <div className="text-sm mb-1 text-gray-800">Level: {data?.level}</div>
         {data?.url && data?.thumbnailPath && (
-          <a className={styles.link} href={data?.url} target="_blank">
+          <a className="text-sm text-blue-500" href={data?.url} target="_blank">
             {data?.url}
           </a>
         )}
