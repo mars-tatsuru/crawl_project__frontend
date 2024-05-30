@@ -1,9 +1,9 @@
 "use client";
 import type { NextPage } from "next";
 import Flow from "@/components/ReactFlow/index";
-import styles from "@/styles/Home.module.scss";
 import "reactflow/dist/style.css";
 import { useState } from "react";
+import clsx from "clsx";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 
 const Crawl: NextPage = () => {
@@ -20,7 +20,7 @@ const Crawl: NextPage = () => {
         `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
         {
           method: "GET",
-        }
+        },
       );
 
       if (!response.ok) {
@@ -67,24 +67,35 @@ const Crawl: NextPage = () => {
   return (
     <div className="h-full">
       {!siteTree && !isCrawling && (
-        <div className="flex flex-col items-center justify-center h-full w-full">
-          <h2>input crawl url</h2>
+        <div className="flex w-1/2 flex-col rounded-md bg-gray-800 p-5">
+          <div className="mb-10">
+            <h2 className="mb-2 text-2xl">input crawl url</h2>
+            <p className="text-sm">input url that you want to crawl.</p>
+          </div>
           <input
             type="text"
             placeholder="https://~~~~~~~"
             onChange={(e) => setSiteUrl(e.target.value)}
-            className="mb-4 w-1/2 h-12 p-2 text-lg"
+            className="mb-4 h-10 w-full rounded-md p-2"
           />
           <button
             onClick={runCrawl}
-            className="w-full max-w-xs p-2 cursor-pointer"
+            className={clsx(
+              "h-10 rounded-sm bg-blue-500 font-bold text-white opacity-50",
+              {
+                "cursor-pointer": siteUrl,
+                "opacity-100": siteUrl,
+                "hover:bg-blue-700": siteUrl,
+              },
+            )}
+            disabled={!siteUrl}
           >
             Run Crawl
           </button>
         </div>
       )}
       {isCrawling && (
-        <div className="flex justify-center items-center h-full flex-col">
+        <div className="flex h-full flex-col items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100"
