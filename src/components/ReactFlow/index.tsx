@@ -105,7 +105,7 @@ const LayoutFlow = (siteTree: any) => {
       setNodes([...layoutedNodes]);
       setEdges([...layoutedEdges]);
     },
-    [nodes, edges]
+    [nodes, edges],
   );
 
   /************************************************
@@ -116,7 +116,7 @@ const LayoutFlow = (siteTree: any) => {
 
     const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
       initialNodes,
-      initialEdges
+      initialEdges,
     );
 
     setNodes([...layoutedNodes]);
@@ -131,7 +131,7 @@ const LayoutFlow = (siteTree: any) => {
       const edge = { ...connection, type: "custom-edge" };
       setEdges((eds) => addEdge(edge, eds));
     },
-    [setEdges]
+    [setEdges],
   );
 
   /************************************************
@@ -141,7 +141,7 @@ const LayoutFlow = (siteTree: any) => {
   const createNode = (
     id: string,
     value: TreeNode,
-    parentId?: string
+    parentId?: string,
   ): Node => ({
     id,
     type: "custom",
@@ -165,7 +165,7 @@ const LayoutFlow = (siteTree: any) => {
   // 3
   const processData = (
     data: { [key: string]: TreeNode },
-    parentId?: string
+    parentId?: string,
   ) => {
     let nodes: Node[] = [];
     let edges: Edge[] = [];
@@ -186,13 +186,13 @@ const LayoutFlow = (siteTree: any) => {
       Object.entries(value).map(([childKey, childValue]) => {
         if (
           !["url", "title", "thumbnailPath", "level", "x", "y"].includes(
-            childKey
+            childKey,
           )
         ) {
           // 6 Recursion
           const childProcessResult = processData(
             { [childKey]: childValue },
-            nodeId
+            nodeId,
           );
 
           nodes = nodes.concat(childProcessResult.nodes);
@@ -229,11 +229,11 @@ const LayoutFlow = (siteTree: any) => {
       // set to the first node
       setViewport(
         {
-          x: -clientRect.x / 2 + windowWidth / 2,
+          x: -clientRect.x / 2 + windowWidth / 2 - 200,
           y: clientRect.y,
           zoom: 0.5,
         },
-        { duration: 1000 }
+        { duration: 1000 },
       );
     }
   }, [nodesInitialized]);
@@ -276,7 +276,7 @@ const LayoutFlow = (siteTree: any) => {
 
 function Flow(siteTree: any) {
   return (
-    <div className="flex grow text-sm w-full h-full">
+    <div className="flex h-full w-full grow text-sm">
       <ReactFlowProvider>
         <LayoutFlow siteTree={siteTree} />
       </ReactFlowProvider>
