@@ -9,23 +9,31 @@ export default function BreadCrumb({ path }: Props) {
   const pathArr = path.split("/").slice(1);
 
   return (
-    <ul className="w-full flex flex-row items-center">
+    <ul className="flex w-full flex-row items-center">
       {pathArr.map((item, index) => {
         const href = `/${pathArr.slice(0, index + 1).join("/")}`;
 
         return (
-          <li key={index} className="text-sm flex items-center">
+          <li key={index} className="flex items-center text-sm">
             <Link
               href={href}
               className={clsx({
-                "text-blue-600": index === pathArr.length - 1,
-                "text-gray-600": index < pathArr.length - 1,
+                "text-blue-600 dark:text-blue-400":
+                  index === pathArr.length - 1,
+                "text-gray-600 dark:text-white": index < pathArr.length - 1,
               })}
             >
               {item}
             </Link>
             {index < pathArr.length - 1 && (
-              <span className="mx-1 text-gray-600">&gt;</span>
+              <span
+                className={clsx({
+                  "mx-1": index < pathArr.length - 1,
+                  "text-gray-600 dark:text-white": index < pathArr.length - 1,
+                })}
+              >
+                &gt;
+              </span>
             )}
           </li>
         );
