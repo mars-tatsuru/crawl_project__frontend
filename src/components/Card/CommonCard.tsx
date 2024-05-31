@@ -1,4 +1,5 @@
 import { Button, Card } from "flowbite-react";
+import clsx from "clsx";
 
 export default function CommonCard() {
   return (
@@ -6,7 +7,14 @@ export default function CommonCard() {
       <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
         SITE URL
         <br />
-        <span className="text-lg text-blue-700">https://www.google.com</span>
+        <span
+          className={clsx(
+            "text-lg font-normal",
+            "text-blue-700 dark:text-blue-400",
+          )}
+        >
+          https://www.example.com
+        </span>
       </h2>
       <p className="text-sm font-normal leading-loose text-gray-700 dark:text-gray-400">
         <span>crawl start date: 2021-10-10 10:00:00</span> <br />

@@ -18,7 +18,7 @@ export default function BreadCrumb({ path }: Props) {
             <Link
               href={href}
               className={clsx({
-                "text-cyan-700 dark:text-cyan-700":
+                "text-cyan-700 dark:text-cyan-500":
                   index === pathArr.length - 1,
                 "text-gray-600 dark:text-white": index < pathArr.length - 1,
               })}

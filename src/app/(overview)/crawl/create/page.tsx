@@ -6,6 +6,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { Button, TextInput } from "flowbite-react";
 
 const Crawl: NextPage = () => {
   const [siteTree, setSiteTree] = useState();
@@ -75,25 +76,14 @@ const Crawl: NextPage = () => {
               input url that you want to crawl.
             </p>
           </div>
-          <input
-            type="text"
+          <TextInput
             placeholder="https://~~~~~~~"
             onChange={(e) => setSiteUrl(e.target.value)}
-            className="mb-4 h-10 w-full rounded-md border border-gray-500 bg-transparent p-2 text-white focus:border-blue-500 focus:outline-none"
-          />
-          <button
-            onClick={runCrawl}
-            className={clsx(
-              "h-10 rounded-sm bg-blue-500 font-bold text-white",
-              {
-                "cursor-not-allowed opacity-50": !siteUrl,
-                "cursor-pointer opacity-100 hover:bg-blue-700": siteUrl,
-              },
-            )}
-            disabled={!siteUrl}
-          >
+            className="mb-5"
+          ></TextInput>
+          <Button disabled={!siteUrl} onClick={runCrawl}>
             Run Crawl
-          </button>
+          </Button>
         </div>
       )}
       {isCrawling && (
