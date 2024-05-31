@@ -10,9 +10,9 @@ export default function Header() {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-gray-800  px-4 shadow-md">
       <BreadCrumb path={pathname} />
-      {/* <Flowbite>
+      <Flowbite>
         <DarkThemeToggle className="mr-2" />
-      </Flowbite> */}
+      </Flowbite>
       <Link href="/" className=" inline-block h-auto text-sm">
         logout
       </Link>

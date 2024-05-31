@@ -1,9 +1,9 @@
 // https://flowbite-react.com/docs/components/accordion
-/** @type {import('tailwindcss').Config} */
 import flowbite from "flowbite-react/tailwind";
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "media", // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class'
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
