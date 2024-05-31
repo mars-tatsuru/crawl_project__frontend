@@ -22,7 +22,7 @@ export default function CommonCard() {
         <span>crawl pages: 100</span>
       </p>
       <Button>
-        View Site
+        View site map
         <svg
           className="-mr-1 ml-2 h-4 w-4"
           fill="currentColor"

@@ -266,7 +266,7 @@ const LayoutFlow = (siteTree: any) => {
     >
       <Background style={{ background: "#333" }} />
       <Panel position="top-right">
-        <p>
+        <p className="text-white">
           Current: positionX:{x}, positionY:{y}, zoom:{zoom}
         </p>
       </Panel>

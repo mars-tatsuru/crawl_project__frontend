@@ -88,8 +88,8 @@ const Crawl: NextPage = () => {
       )}
       {isCrawling && (
         <div className="flex h-full flex-col items-center justify-center">
-          <ArrowPathIcon className="h-20 w-20 animate-spin" />
-          <h2 className="text-2xl">Crawling</h2>
+          <ArrowPathIcon className="h-20 w-20 animate-spin dark:text-white" />
+          <h2 className="text-2xl dark:text-white">Crawling</h2>
         </div>
       )}
       {siteTree && <Flow siteTree={siteTree} />}
