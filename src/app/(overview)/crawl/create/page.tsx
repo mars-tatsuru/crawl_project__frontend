@@ -18,8 +18,8 @@ const Crawl: NextPage = () => {
     try {
       const response = await fetch(
         // TODO: Change the URL to the crawling server URL
-        `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
-        // `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
+        // `http://localhost:8080/crawl?siteUrl=${siteUrl}`,
+        `https://crawl-project--backend.fly.dev/crawl?siteUrl=${siteUrl}`,
         {
           method: "GET",
         },
