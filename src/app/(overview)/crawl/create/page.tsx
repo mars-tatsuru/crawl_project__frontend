@@ -68,10 +68,12 @@ const Crawl: NextPage = () => {
   return (
     <div className="h-full">
       {!siteTree && !isCrawling && (
-        <div className="flex w-1/2 flex-col rounded-md bg-gray-800 p-5">
+        <div className="flex w-1/2 flex-col rounded-md bg-white p-5 dark:bg-gray-800">
           <div className="mb-10">
-            <h2 className="mb-2 text-2xl">input crawl url</h2>
-            <p className="text-sm">input url that you want to crawl.</p>
+            <h2 className="mb-2 text-2xl dark:text-white">input crawl url</h2>
+            <p className="text-sm dark:text-white">
+              input url that you want to crawl.
+            </p>
           </div>
           <input
             type="text"

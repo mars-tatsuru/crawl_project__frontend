@@ -8,7 +8,7 @@ export default function SideBar() {
   const customTheme: CustomFlowbiteTheme["sidebar"] = {
     // change the sidebar background color etc...
     root: {
-      base: "bg-white dark:bg-gray-800 shadow-md",
+      base: "bg-white dark:bg-gray-800 shadow-sm",
       inner: "bg-white dark:bg-gray-800 px-3 py-4",
     },
   };

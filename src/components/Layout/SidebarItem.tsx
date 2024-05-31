@@ -22,11 +22,10 @@ export default function SideBar({
       <Link href={href} legacyBehavior>
         <a
           className={clsx(
-            "flex items-center rounded-lg p-2 text-base font-normal  hover:bg-gray-100 dark:hover:bg-gray-700",
+            "flex items-center rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700",
             {
-              "text-blue-600 dark:text-blue-400":
-                pathname === href || pathname.includes(href),
-              "text-gray-900 dark:text-white": pathname !== href,
+              "text-blue-600 dark:text-blue-400": pathname.includes(href),
+              "text-gray-600 dark:text-gray-400": pathname !== href,
             },
           )}
         >

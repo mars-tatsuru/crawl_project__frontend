@@ -14,7 +14,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-white px-4  shadow-sm dark:bg-gray-800">
+    <header className="flex h-16 w-full items-center justify-between bg-white px-4 shadow-2xl dark:bg-gray-800">
       <BreadCrumb path={pathname} />
       <Flowbite>
         <DarkThemeToggle className="mr-2" />
