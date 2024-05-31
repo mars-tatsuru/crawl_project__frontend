@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 export default function CommonCard() {
   return (
-    <Card className="max-w-sm">
+    <Card className="w-96 max-w-sm">
       <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
         SITE URL
         <br />
