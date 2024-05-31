@@ -24,7 +24,7 @@ export default function SideBar({
           className={clsx(
             "flex items-center rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700",
             {
-              "text-blue-600 dark:text-blue-400": pathname.includes(href),
+              "text-cyan-700 dark:text-cyan-700": pathname.includes(href),
               "text-gray-600 dark:text-gray-400": pathname !== href,
             },
           )}
