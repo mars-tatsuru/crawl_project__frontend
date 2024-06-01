@@ -1,14 +1,16 @@
+"use client";
+
 import Link from "next/link";
-import { Button } from "flowbite-react";
+import Image from "next/image";
+import { Button, Navbar } from "flowbite-react";
+import Header from "@/components/Top/Header";
+import Hero from "@/components/Top/Hero";
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <Button gradientDuoTone="greenToBlue">
-        <Link href="/home" className="text-xl dark:text-white">
-          GO TO DASHBOARD PAGE
-        </Link>
-      </Button>
-    </main>
+    <div className="top">
+      <Header />
+      <Hero />
+    </div>
   );
 }
