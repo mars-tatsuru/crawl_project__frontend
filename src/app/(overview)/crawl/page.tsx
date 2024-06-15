@@ -11,11 +11,6 @@ const Crawl: NextPage = () => {
       </div>
       <div className="flex flex-wrap gap-5">
         <CommonCard />
-        <CommonCard />
-        <CommonCard />
-        <CommonCard />
-        <CommonCard />
-        <CommonCard />
       </div>
     </div>
   );

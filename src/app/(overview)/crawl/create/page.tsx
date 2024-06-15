@@ -66,10 +66,20 @@ const Crawl: NextPage = () => {
     }
   };
 
+  const clearInput = () => {
+    setSiteUrl("");
+
+    // Clear text input
+    const input = document.querySelector("input");
+    if (input) {
+      input.value = "";
+    }
+  };
+
   return (
     <div className="h-full">
       {!siteTree && !isCrawling && (
-        <div className="flex w-1/2 flex-col rounded-md bg-white p-5 dark:bg-gray-800">
+        <div className="flex max-w-3xl flex-col rounded-md bg-white p-5 dark:bg-gray-800">
           <div className="mb-10">
             <h2 className="mb-2 text-2xl dark:text-white">input crawl url</h2>
             <p className="text-sm dark:text-white">
@@ -81,9 +91,18 @@ const Crawl: NextPage = () => {
             onChange={(e) => setSiteUrl(e.target.value)}
             className="mb-5"
           ></TextInput>
-          <Button disabled={!siteUrl} onClick={runCrawl}>
-            Run Crawl
-          </Button>
+          <div className="flex justify-end gap-5">
+            <Button
+              gradientDuoTone="greenToBlue"
+              disabled={!siteUrl}
+              onClick={runCrawl}
+            >
+              Run Crawl
+            </Button>
+            <Button color="red" disabled={!siteUrl} onClick={clearInput}>
+              Clear
+            </Button>
+          </div>
         </div>
       )}
       {isCrawling && (
