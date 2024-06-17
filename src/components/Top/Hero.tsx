@@ -33,7 +33,7 @@ export default function Hero() {
           size="xl"
           label="4"
         >
-          <Link href="/home">Get started</Link>
+          <Link href="/login">Get started</Link>
           <ArrowUpRightIcon className="ml-3 w-4" />
         </Button>
       </div>
