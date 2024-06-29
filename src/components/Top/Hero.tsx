@@ -8,7 +8,7 @@ import Kv from "@/assets/kv.png";
 
 export default function Hero() {
   return (
-    <div className="flex h-[calc(100vh-8rem)] items-center justify-center gap-20 bg-gradient-to-bl from-blue-300  via-green-200 to-blue-300 text-center text-white dark:bg-gradient-to-bl dark:from-gray-900 dark:via-gray-700 dark:to-gray-900">
+    <div className="flex h-[calc(100vh-8rem)] items-center justify-center gap-20 text-center text-white">
       <div className="w-10/12 text-center">
         <h1 className="mb-2 inline-block bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-clip-text text-7xl font-bold text-transparent ">
           CRAWL MAP

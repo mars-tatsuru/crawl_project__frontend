@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <Navbar fluid>
       <Navbar.Brand href="/">
-        <CircleStackIcon className="mr-2 h-8 w-8 dark:text-white" />
+        {/* <CircleStackIcon className="mr-2 h-8 w-8 dark:text-white" /> */}
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           CRAWL MAP
         </span>
